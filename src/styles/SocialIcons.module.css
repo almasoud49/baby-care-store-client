@@ -1,0 +1,18 @@
+.SCLIcons{
+    font-size: 16px;
+    border: 1px solid #969696;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 3px;
+    font-weight: normal;
+    color: #363636;
+    transition: 0.5s ease-in-out;
+}
+.SCLIcons:hover{
+    background-color: #0C1734;
+    border: 1px solid #0C1734;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+}

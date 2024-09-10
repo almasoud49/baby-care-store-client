@@ -1,0 +1,19 @@
+.mainContainer {
+    background: #d3959b;
+    background: -webkit-linear-gradient(to bottom, #bfe6ba, #d3959b);
+    background: linear-gradient(to bottom, #bfe6ba, #d3959b);
+    padding: 30px;
+    border-radius: 5px;
+  }
+  .CCContainer {
+    transition: 0.5s ease-in-out;
+  }
+  .CCContainer:hover {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition: 0.5s ease-in-out;
+  }
+  .CCContainer:hover .CCTitle {
+    color: #0C1734;
+    transition: 0.5s ease-in-out;
+  }
