@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Styles from "../../shared/SocialIcon/SocialIons"
+import Styles from "../../../styles/SocialIcons.module.css"
 import {
   FaFacebookF,
   FaInstagram,

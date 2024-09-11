@@ -6,7 +6,7 @@ const Products = async() => {
 
     const res = await fetch("http://localhost:5000/api/products", {cache:'no-cache'})
     const productsData = await res.json();
-    // console.log(productsData)
+   
 
     return (
         <div className="ml-0 lg:ml-4 mt-5 lg:mt-0">

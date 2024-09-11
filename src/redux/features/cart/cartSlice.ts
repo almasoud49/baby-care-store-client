@@ -56,4 +56,4 @@ const cartSlice = createSlice({
 
 export const {addToCart,removeFromCart,removeAllDataFromCart} = cartSlice.actions;
 export default cartSlice.reducer;
-export const useCurrentData = (state: RootState) => state.cart.cart;
+export const useCurrentCartData = (state: RootState) => state.cart.cart;

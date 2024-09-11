@@ -1,10 +1,10 @@
-import AllProducts from '@/components/products/Products';
+import Products from '@/components/products/Products';
 import React from 'react';
 
 const ProductsPage = () => {
     return (
         <div>
-           <AllProducts/> 
+           <Products/>
         </div>
     );
 };
