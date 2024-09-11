@@ -14,6 +14,15 @@ export type TProduct = {
   discount?: string;
 }
 
+export type TInputProps = {
+  name: string;
+  label?: string;
+  type?: string;
+  size?: "medium";
+  fullWidth?: boolean;
+  placeholder?: string;
+  required?: boolean;
+};
 
 
 export type TUserRole = keyof typeof USER_ROLE;

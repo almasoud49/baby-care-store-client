@@ -20,10 +20,12 @@ import { useCurrentCartData } from "@/redux/features/cart/cartSlice";
 const OrderDetails = () => {
 
     const cartData = useAppSelector(useCurrentCartData);
+   
     const subTotal = cartData.reduce((total, item) => {
         const price = parseFloat(item.price);
-        const quantity = typeof item.quantity === "number" ? item.quantity : 0;
-        if (!isNaN(price)) {
+        const quantity = item.quantity; 
+      
+        if (!isNaN(price) && price >= 0 && quantity > 0) {
           return total + price * quantity;
         }
         return total;
