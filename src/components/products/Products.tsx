@@ -2,7 +2,7 @@ import { TProduct } from '@/types/type.global';
 import ProductCard from '@/utils/actions/ProductCard';
 import React from 'react';
 
-const AllProducts = async() => {
+const Products = async() => {
 
     const res = await fetch("http://localhost:5000/api/products", {cache:'no-cache'})
     const productsData = await res.json();
@@ -31,4 +31,4 @@ const AllProducts = async() => {
     );
 };
 
-export default AllProducts;
+export default Products;
