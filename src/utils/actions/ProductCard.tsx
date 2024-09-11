@@ -3,6 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import InfoIcon from "@mui/icons-material/Info";
+import CardButton from "./CardButton";
 
 
 const ProductCard = ({ product }: {product:TProduct}) => {
@@ -63,7 +64,7 @@ const ProductCard = ({ product }: {product:TProduct}) => {
                   )}
                  <Stack display="flex" flexDirection="row">
             <Box>
-              {/* <CartButton product={product} /> */}
+              <CardButton product={product} />
             </Box>
             <Link href={`/products/${product._id}`}>
               <InfoIcon sx={{ fontSize: 25, color: "#0C1734" }} />
