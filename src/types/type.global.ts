@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { USER_ROLE } from "./role.constants";
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 
 export type TProduct = {
   _id: string;
@@ -33,3 +36,9 @@ export type TProductProps ={
 }
 
 export type TUserRole = keyof typeof USER_ROLE;
+
+export type TDrawerMenuItem = {
+  title: string;
+  path: string;
+  icon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string };
+}
