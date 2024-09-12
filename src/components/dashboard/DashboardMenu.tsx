@@ -54,7 +54,7 @@ const DashboardMenu = ({ children }: { children: React.ReactNode }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="h1" color="#fff">
-            Hello, Abdullah Al Masoud!
+            Hello, Abdullah Al Masoud
           </Typography>
         </Toolbar>
       </AppBar>
@@ -69,7 +69,7 @@ const DashboardMenu = ({ children }: { children: React.ReactNode }) => {
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },

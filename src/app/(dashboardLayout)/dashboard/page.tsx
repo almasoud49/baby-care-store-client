@@ -1,11 +1,12 @@
 import React from 'react';
+import { Typography } from "@mui/material";
 
-const MainPage = () => {
+const MainDashboardPage = () => {
     return (
         <div>
-            <h1>Welcome to Dashboard</h1>
+            <Typography>Welcome To Baby Care Store Dashboard!</Typography>
         </div>
     );
 };
 
-export default MainPage;
+export default MainDashboardPage;

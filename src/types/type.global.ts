@@ -42,3 +42,12 @@ export type TDrawerMenuItem = {
   path: string;
   icon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & { muiName: string };
 }
+
+export type TOrder = {
+  _id: string;
+  product: string;
+  price: string;
+  quantity: string;
+  payment: string;
+  status: string;
+};
