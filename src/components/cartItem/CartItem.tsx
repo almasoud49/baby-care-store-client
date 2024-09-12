@@ -21,6 +21,7 @@ const CartItem = () => {
   const dispatch = useAppDispatch();
 
     return (
+<div>
 <Box>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 400 }} aria-label="simple table">
@@ -51,7 +52,7 @@ const CartItem = () => {
                     </Typography>
                   </Stack>
                 </TableCell>
-                <TableCell>{item.price} TK</TableCell>
+                <TableCell>$ {item.price}</TableCell>
                 <TableCell>
                   <Stack
                     sx={{
@@ -81,7 +82,7 @@ const CartItem = () => {
                   </Stack>
                 </TableCell>
                 <TableCell>
-                  {(parseFloat(item.price) * item.quantity).toFixed(2)} TK
+                 $ {(parseFloat(item.price) * item.quantity).toFixed(2)} 
                 </TableCell>
               </TableRow>
             ))}
@@ -138,6 +139,7 @@ const CartItem = () => {
         </Box>
       </Stack>
     </Box>
+</div>
     );
 };
 

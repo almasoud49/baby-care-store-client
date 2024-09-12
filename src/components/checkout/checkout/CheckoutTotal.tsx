@@ -99,7 +99,7 @@ const CheckoutTotal = () => {
               <Box>
                 <Typography fontWeight={600}>
                   {" "}
-                  {(parseFloat(item.price) * item.quantity).toFixed(2)} TK
+                 $ {(parseFloat(item.price) * item.quantity).toFixed(2)} 
                 </Typography>
               </Box>
             </Box>
@@ -114,7 +114,7 @@ const CheckoutTotal = () => {
           }}
         >
           <Typography fontWeight={600}>Subtotal</Typography>
-          <Typography fontWeight={600}>{fixedSubTotal} TK</Typography>
+          <Typography fontWeight={600}>$ {fixedSubTotal}</Typography>
         </Box>
       </Box>
       <Stack
@@ -127,7 +127,7 @@ const CheckoutTotal = () => {
         }}
       >
         <Typography>Estimated Shipping</Typography>
-        <Typography fontWeight={600}>15TK</Typography>
+        <Typography fontWeight={600}>$ 15</Typography>
       </Stack>
       <Stack
         sx={{
@@ -139,7 +139,7 @@ const CheckoutTotal = () => {
         }}
       >
         <Typography>Total</Typography>
-        <Typography fontWeight={600}>{totalAmount} TK</Typography>
+        <Typography fontWeight={600}>$ {totalAmount} </Typography>
       </Stack>
       <Box>
         <Tooltip title="Pay with cash upon delivery." arrow placement="top-end">

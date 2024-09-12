@@ -52,7 +52,7 @@ const OrderInfo = () => {
         }}
       >
         <Typography>Total:</Typography>
-        <Typography fontWeight={600}>266.86 TK</Typography>
+        <Typography fontWeight={600}>$ 266.86 </Typography>
       </Box>
       <Box
         sx={{

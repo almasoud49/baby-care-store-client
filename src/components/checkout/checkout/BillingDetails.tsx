@@ -17,7 +17,7 @@ const BillingDetails = () => {
           <Grid item xs={12}>
             <TextField
               required
-              label="Email Adress"
+              label="Email Address"
               placeholder="Email Address"
               fullWidth
               size="medium"

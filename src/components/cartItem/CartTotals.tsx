@@ -48,7 +48,7 @@ const subTotal = cartData.reduce((total, item) => {
       >
         <Typography>Subtotal</Typography>
         <Typography fontSize="18px" fontWeight={600}>
-          {fixedSubTotal} TK
+          $ {fixedSubTotal} 
         </Typography>
       </Stack>
       <Stack
@@ -62,7 +62,7 @@ const subTotal = cartData.reduce((total, item) => {
       >
         <Typography>Estimated Shipping</Typography>
         <Typography fontSize="18px" fontWeight={600}>
-          {shippingRate} TK
+         $ {shippingRate}
         </Typography>
       </Stack>
       <Stack
@@ -76,7 +76,7 @@ const subTotal = cartData.reduce((total, item) => {
       >
         <Typography>Estimated Total</Typography>
         <Typography fontSize="18px" fontWeight={600}>
-          {totalAmount} TK
+         $ {totalAmount} 
         </Typography>
       </Stack>
       {token ? (

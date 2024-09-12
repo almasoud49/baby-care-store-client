@@ -81,7 +81,7 @@ const OrderDetails = () => {
                     </Box>
                   </TableCell>
                   <TableCell sx={{ fontWeight: "600" }}>
-                    {(parseFloat(item.price) * item.quantity).toFixed(2)} TK
+                    $ {(parseFloat(item.price) * item.quantity).toFixed(2)} 
                   </TableCell>
                 </TableRow>
               ))}
@@ -92,7 +92,7 @@ const OrderDetails = () => {
                   <Typography fontWeight={600}>Subtotal:</Typography>
                 </TableCell>
                 <TableCell sx={{ fontWeight: "600" }}>
-                  {fixedSubTotal} TK
+                  $ {fixedSubTotal}
                 </TableCell>
               </TableRow>
               <TableRow
@@ -101,7 +101,7 @@ const OrderDetails = () => {
                 <TableCell component="th" scope="row">
                   <Typography fontWeight={600}>Shipping:</Typography>
                 </TableCell>
-                <TableCell sx={{ fontWeight: "600" }}>15 TK</TableCell>
+                <TableCell sx={{ fontWeight: "600" }}>$ 15 </TableCell>
               </TableRow>
               <TableRow
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -120,7 +120,7 @@ const OrderDetails = () => {
                   <Typography fontWeight={600}>Total:</Typography>
                 </TableCell>
                 <TableCell sx={{ fontWeight: "600" }}>
-                  {totalAmount} TK
+                  $ {totalAmount} 
                 </TableCell>
               </TableRow>
             </TableBody>
