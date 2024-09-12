@@ -24,5 +24,12 @@ export type TInputProps = {
   required?: boolean;
 };
 
+export type TProductProps ={
+  _id: string;
+  quantity: number;
+  image: string;
+  title: string;
+  price: string;  
+}
 
 export type TUserRole = keyof typeof USER_ROLE;
