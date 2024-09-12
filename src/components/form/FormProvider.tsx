@@ -16,7 +16,7 @@ const FormProvider = ({ children, onSubmit }: TFormProps) => {
 
     const submit: SubmitHandler<FieldValues> = (data) => {
       onSubmit(data);
-      console.log(data);
+      
     };
     return (
         <BCFProvider {...methods}>

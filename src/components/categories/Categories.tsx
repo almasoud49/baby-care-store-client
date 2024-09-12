@@ -11,7 +11,7 @@ const Categories = async() => {
 
     const data = await res.json();
     const categoryData = data?.data?.filter((item: TProduct)=> item.category);
-    // console.log(categoryData.category);
+    
 
     return (
         <div className="my-20">

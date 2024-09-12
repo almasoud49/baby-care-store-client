@@ -13,10 +13,10 @@ const FlashSale = async () => {
   });
 
   const flashSaleData = await res.json();
-  console.log(flashSaleData)
+  
   const filterFlashSaleData = flashSaleData?.data?.filter(
     (item: TProduct) => item.flashSale);
-    // console.log(filterFlashSaleData)
+  
   return (
     <Container>
       <Stack

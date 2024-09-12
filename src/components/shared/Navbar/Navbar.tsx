@@ -1,33 +1,45 @@
 "use client";
 import {
-    Badge,
-    Box,
-    Button,
-    Container,
-    Divider,
-    Drawer,
-    Stack,
-    Typography,
-  } from "@mui/material";
+  Badge,
+  Box,
+  Button,
+  Container,
+  Divider,
+  Drawer,
+  Stack,
+  Typography,
+} from "@mui/material";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../assets/baby-logo.png"
+import logo from "../../../assets/baby-logo.png";
+
 import {
   AlignJustify,
-  BaggageClaim,
   Headset,
   Heart,
   Home,
+  LayoutDashboard,
   LogIn,
   ShoppingBasket,
   ShoppingCart,
   User,
 } from "lucide-react";
-
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import {
+  logoutUser,
+  useCurrentRole,
+  useCurrentToken,
+} from "@/redux/features/auth/authSlice";
+import { useCurrentCartData } from "@/redux/features/cart/cartSlice";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const token = useAppSelector(useCurrentToken);
+  const cartData = useAppSelector(useCurrentCartData);
+  const dispatch = useAppDispatch();
+  const role = useAppSelector(useCurrentRole);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -59,9 +71,7 @@ const Navbar = () => {
                   <Typography component={Link} href="/products">
                     Products
                   </Typography>
-                  <Typography component={Link} href="/flash-sale">
-                    Flash Sale
-                  </Typography>
+
                   <Typography component={Link} href="/about-us">
                     About Us
                   </Typography>
@@ -69,38 +79,51 @@ const Navbar = () => {
                     Contact Us
                   </Typography>
 
+                  {token && (
+                    <Typography
+                      component={Link}
+                      href={
+                        role === "admin" ? "/dashboard" : "/dashboard/my-orders"
+                      }
+                    >
+                      Dashboard
+                    </Typography>
+                  )}
+
                   <Divider
                     orientation="vertical"
                     variant="fullWidth"
                     flexItem
                     sx={{ borderColor: "#fff", opacity: 0.5 }}
                   />
-
                   <Stack
                     display="flex"
                     flexDirection="row"
                     alignItems="center"
                     gap={2}
                   >
-                    <Box>
-                      <Button
-                        //   onClick={() => ())}
-                        sx={{
-                          width: "80px",
-                          padding: "4px 0",
-                          marginLeft: "5px",
-                          backgroundColor: "#EF4444",
-                          "&:hover": {
+                    {token ? (
+                      <Box>
+                        <Button
+                          onClick={() => dispatch(logoutUser())}
+                          sx={{
+                            width: "80px",
+                            padding: "4px 0",
+                            marginLeft: "5px",
                             backgroundColor: "#EF4444",
-                          },
-                        }}
-                      >
-                        Logout
-                      </Button>
-                    </Box>
-                    <Box component={Link} href="/login">
-                      <LogIn className=" cursor-pointer" size={25} />
-                    </Box>
+                            "&:hover": {
+                              backgroundColor: "#EF4444",
+                            },
+                          }}
+                        >
+                          Logout
+                        </Button>
+                      </Box>
+                    ) : (
+                      <Box component={Link} href="/login">
+                        <LogIn className=" cursor-pointer" size={25} />
+                      </Box>
+                    )}
 
                     <Badge
                       badgeContent={0}
@@ -111,7 +134,7 @@ const Navbar = () => {
                       <Heart className=" cursor-pointer " size={25} />
                     </Badge>
                     <Badge
-                      badgeContent={0}
+                      badgeContent={cartData?.length}
                       color="primary"
                       sx={{ userSelect: "none" }}
                       showZero
@@ -153,12 +176,7 @@ const Navbar = () => {
                           Products
                         </Typography>
                       </Box>
-                      <Box display="flex">
-                        <BaggageClaim size={20} className="mr-1" />
-                        <Typography component={Link} href="/flash-sale">
-                          Flash Sale
-                        </Typography>
-                      </Box>
+
                       <Box display="flex">
                         <User size={20} className="mr-1" />
                         <Typography component={Link} href="/about-us">
@@ -172,24 +190,42 @@ const Navbar = () => {
                         </Typography>
                       </Box>
 
+                      <Box display="flex">
+                        <LayoutDashboard size={20} className="mr-1" />
+                        {token && (
+                          <Typography
+                            component={Link}
+                            href={
+                              role === "admin"
+                                ? "/dashboard"
+                                : "/dashboard/my-orders"
+                            }
+                          >
+                            Dashboard
+                          </Typography>
+                        )}
+                      </Box>
                     </Box>
-
-                    <Divider orientation="horizontal"
+                    <Divider
+                      orientation="horizontal"
                       variant="fullWidth"
                       flexItem
                       sx={{
                         borderColor: "#363636",
                         opacity: 0.2,
                         margin: "15px 0px",
-                      }}/>
-
-                      <Stack display="flex"
+                      }}
+                    />
+                    <Stack
+                      display="flex"
                       flexDirection="row"
                       alignItems="center"
-                      gap={2}>
+                      gap={2}
+                    >
+                      {token ? (
                         <Box>
-                        <Button
-                            // onClick={() => dispatch(logoutUser())}
+                          <Button
+                            onClick={() => dispatch(logoutUser())}
                             sx={{
                               width: "80px",
                               padding: "4px 0",
@@ -203,11 +239,13 @@ const Navbar = () => {
                             Logout
                           </Button>
                         </Box>
-
+                      ) : (
                         <Box component={Link} href="/login">
                           <LogIn className=" cursor-pointer" size={25} />
                         </Box>
-                        <Badge
+                      )}
+
+                      <Badge
                         badgeContent={0}
                         color="info"
                         sx={{ userSelect: "none" }}
@@ -226,10 +264,7 @@ const Navbar = () => {
                           <ShoppingCart className=" cursor-pointer" size={25} />
                         </Box>
                       </Badge>
-
-                      </Stack>
-
-                    
+                    </Stack>
                   </Drawer>
                 </div>
               </div>
@@ -237,7 +272,6 @@ const Navbar = () => {
           </Stack>
         </Stack>
       </Container>
-
       {open && (
         <div
           style={{
