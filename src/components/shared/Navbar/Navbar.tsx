@@ -118,14 +118,7 @@ const Navbar = () => {
                       <LogIn className="cursor-pointer" size={25} />
                     </Box>
                   )}
-                  <Badge
-                    badgeContent={0}
-                    color="primary"
-                    sx={{ userSelect: "none" }}
-                    showZero
-                  >
-                    <Heart className="cursor-pointer" size={25} />
-                  </Badge>
+
                   <Badge
                     badgeContent={cartData?.length}
                     color="primary"
@@ -195,9 +188,7 @@ const Navbar = () => {
                     <Box
                       component={Link}
                       href={
-                        role === "admin"
-                          ? "/dashboard"
-                          : "/dashboard/my-orders"
+                        role === "admin" ? "/dashboard" : "/dashboard/my-orders"
                       }
                       onClick={() => toggleDrawer(false)}
                     >
