@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,10 +14,10 @@ const ThemeToggle = () => {
 
   return (
     <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       style={{ background: "none", border: "none", cursor: "pointer" }}
     >
-      {theme === "light" ? <Moon size={25} /> : <Sun size={25} />}
+      {resolvedTheme === "light" ? <Moon size={25} /> : <Sun size={25} />}
     </button>
   );
 };

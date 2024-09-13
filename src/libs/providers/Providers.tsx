@@ -1,23 +1,25 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider, useTheme } from "next-themes";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "@/redux/store";
-import { useTheme } from "next-themes";
 import { lightTheme, darkTheme } from "../theme/theme";
+import { ReactNode } from "react";
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+interface ProvidersProps {
+  children: ReactNode;
+}
+
+const Providers = ({ children }: ProvidersProps) => {
   const { theme } = useTheme();
 
- 
   const hasPersistor = persistor !== null;
 
   return (
     <Provider store={store}>
       {hasPersistor ? (
-        <PersistGate loading={<div>Loading...</div>} persistor={persistor as any}>
+        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
           <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
             {children}
           </ThemeProvider>
@@ -32,4 +34,3 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Providers;
-
