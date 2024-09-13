@@ -25,7 +25,7 @@ const BannerSlider = () => {
         >
           <div>
             {banners.map((banner, index) => (
-              <div key={banner.id}>
+              <div key={index}>
                 <SwiperSlide>
                   <div
                     className={`${Styles.mainContainer} flex items-center flex-col lg:flex-row lg:justify-around`}

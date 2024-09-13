@@ -1,5 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit'
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -10,23 +11,51 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import cartReducer from "./features/cart/cartSlice"
+
+import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+
+import cartReducer from "./features/cart/cartSlice";
 import authReducer from "./features/auth/authSlice";
 
-const persistConfigCart = {
-  key: "cart",
-  storage,
+const createNoopStorage = () => {
+  return {
+    getItem(_key: any) {
+      return Promise.resolve(null);
+    },
+    setItem(_key: any, value: any) {
+      return Promise.resolve(value);
+    },
+    removeItem(_key: any) {
+      return Promise.resolve();
+    },
+  };
 };
 
-const persistConfigAuth = {
-  key: "auth",
+const storage = typeof window !== "undefined" ? createWebStorage("local") : createNoopStorage();
+
+
+const persistConfig = {
+  key: 'root',
   storage,
+ 
 };
 
-const persistedCartReducer = persistReducer(persistConfigCart, cartReducer);
-const persistedAuthReducer = persistReducer(persistConfigAuth, authReducer);
 
+const cartPersistConfig = {
+  ...persistConfig,
+  key: 'cart',
+};
+
+const authPersistConfig = {
+  ...persistConfig,
+  key: 'auth',
+};
+
+// Create persisted reducers
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+
+// Create store with persisted reducers
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
@@ -40,6 +69,9 @@ export const store = configureStore({
     }),
 });
 
+
+export const persistor = typeof window !== 'undefined' ? persistStore(store) : { persist: () => {}, flush: () => {} };
+
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export const persistor = persistStore(store);

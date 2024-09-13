@@ -34,9 +34,9 @@ const CartItem = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {cartData.map((item, index) => (
+            {cartData.map((item) => (
               <TableRow
-                key={index}
+                key={item._id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell>

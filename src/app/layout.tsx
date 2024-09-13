@@ -17,25 +17,19 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Baby Care Store",
-  description: "Available all Types of Baby Care Items ",
+  description: "Available all Types of Baby Care Items",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-<Providers>
-<html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="min-h-screen">
-          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
-        </div>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
+          <div className="min-h-screen">
+            <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+          </div>
+        </Providers>
       </body>
     </html>
-</Providers>
   );
 }

@@ -57,9 +57,9 @@ const CheckoutTotal = () => {
       </Stack>
       <Divider></Divider>
       <Box>
-        {cartData.map((item, index) => (
+        {cartData.map((item) => (
           <Stack
-            key={index}
+            key={item._id}
             sx={{
               borderBottom: "1px dashed #c1c1c1",
               margin: "10px 0",
