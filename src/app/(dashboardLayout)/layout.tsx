@@ -1,6 +1,6 @@
 "use client";
 
-import DashboardMenu from "@/components/dashboard/DashboardMenu";
+import DashboardMenu from "@/components/dashboard/AdminDashboard/DashboardMenu";
 import React from "react";
 
 export default function DashboardLayout({

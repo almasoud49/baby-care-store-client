@@ -6,7 +6,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Logo from "../../assets/baby-logo.png";
+import Logo from "@/assets/baby-logo.png";
 import Image from "next/image";
 import { SideMenuItems } from "@/utils/SideMenuItems";
 import { TUserRole } from "@/types/type.global";
