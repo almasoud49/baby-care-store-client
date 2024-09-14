@@ -1,7 +1,4 @@
-
-
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 type Review = {
   reviewerName: string;
@@ -12,14 +9,16 @@ type Review = {
 
 const ProductReviews = ({ productId }: { productId: string }) => {
   const [review, setReview] = useState({
-    reviewerName: '',
+    reviewerName: "",
     rating: 0,
-    comment: '',
+    comment: "",
   });
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [reviews, setReviews] = useState<Review[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setReview({ ...review, [name]: value });
   };
@@ -28,18 +27,17 @@ const ProductReviews = ({ productId }: { productId: string }) => {
     e.preventDefault();
     try {
       const response = await fetch(`/api/reviews/${productId}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(review),
       });
       const data = await response.json();
       if (response.ok) {
-        setMessage('Review Created Successfully!');
-        setReview({ reviewerName: '', rating: 0, comment: '' });
+        setMessage("Review Created Successfully!");
+        setReview({ reviewerName: "", rating: 0, comment: "" });
 
-       
         const newReview: Review = {
           reviewerName: review.reviewerName,
           rating: review.rating,
@@ -51,8 +49,8 @@ const ProductReviews = ({ productId }: { productId: string }) => {
         setMessage(`Error: ${data.error}`);
       }
     } catch (error) {
-      console.error('Submit Error:', error);
-      setMessage('An Unexpected Error Occurred.');
+      console.error("Submit Error:", error);
+      setMessage("An Unexpected Error Occurred.");
     }
   };
 
@@ -63,7 +61,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
         const data = await response.json();
         setReviews(data);
       } catch (error) {
-        console.error('Fetch Error:', error);
+        console.error("Fetch Error:", error);
       }
     };
 
@@ -124,7 +122,9 @@ const ProductReviews = ({ productId }: { productId: string }) => {
               <h3 className="text-lg font-bold">{review.reviewerName}</h3>
               <p className="text-yellow-500">Rating: {review.rating}/5</p>
               <p className="text-gray-700">{review.comment}</p>
-              <p className="text-sm text-gray-500">Submitted on: {new Date(review.createdAt).toLocaleString()}</p>
+              <p className="text-sm text-gray-500">
+                Submitted on: {new Date(review.createdAt).toLocaleString()}
+              </p>
             </div>
           ))}
         </div>
