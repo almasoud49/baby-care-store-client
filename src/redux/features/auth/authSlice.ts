@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {jwtDecode} from "jwt-decode";
 
 
-type TInitialState = {
+interface TInitialState  {
   user: string | null;
   token: string | null;
   role: string | null

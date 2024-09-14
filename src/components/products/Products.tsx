@@ -1,6 +1,7 @@
 import { TProduct } from '@/types/type.global';
 import ProductCard from '@/utils/actions/ProductCard';
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Products = async() => {
 
@@ -14,12 +15,16 @@ const Products = async() => {
             <p className=" text-xl font-semibold text-[#0C1734]">
           Our Collection of Products
         </p>
+       
         <p className="text-lg font-semibold text-gray-600">
           Showing <span className="text-red-500">1-20</span> of{" "}
           <span className="text-[#0C1734]">20</span> Items
         </p>
+        
             </div>
-            <div className=" grid grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
+            <SearchBar/>
+
+            <div className=" grid mt-4 grid-cols-2 lg:grid-cols-3 gap-5 mx-auto">
             {
                 productsData?.data?.map((product: TProduct)=>(
                     <ProductCard product={product} key={product._id}/>

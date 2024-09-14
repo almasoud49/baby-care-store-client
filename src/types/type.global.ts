@@ -15,6 +15,7 @@ export type TProduct = {
   flashSale: boolean;
   flashSaleOffer?: string;
   discount?: string;
+  
 }
 
 export type TInputProps = {

@@ -4,11 +4,10 @@ import SocialIcons from "../shared/SocialIcon/SocialIons";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Cable, Heart, Mail, Minus, Plus } from "lucide-react";
 import Link from "next/link";
-import { TProduct } from '@/types/type.global';
 import { useAppDispatch } from '@/redux/hooks';
 import { addToCart } from '@/redux/features/cart/cartSlice';
 
-const ProductSideInfo = ({product}:{product:TProduct}) => {
+const ProductSideInfo = ({product}:any) => {
     const {brand,title,flashSale,flashSaleOffer,price,ratings,category,} = product;
     const dispatch = useAppDispatch();
 
