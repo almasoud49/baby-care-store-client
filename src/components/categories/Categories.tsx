@@ -1,22 +1,22 @@
-import { TProduct } from '@/types/type.global';
-import React from 'react';
+import { TProduct } from "@/types/type.global";
+import React from "react";
 import { Button, Container } from "@mui/material";
-import CategoriesCard from '@/utils/actions/CategoriesCard';
+import CategoriesCard from "@/utils/actions/CategoriesCard";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-const Categories = async() => {
+const Categories = async () => {
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/products"
+  );
 
-    const res = await fetch("http://localhost:5000/api/products");
+  const data = await res.json();
+  const categoryData = data?.data?.filter((item: TProduct) => item.category);
 
-    const data = await res.json();
-    const categoryData = data?.data?.filter((item: TProduct)=> item.category);
-    
-
-    return (
-        <div className="my-20">
-           <Container>
-           <div className="text-center">
+  return (
+    <div className="my-20">
+      <Container>
+        <div className="text-center">
           <h1 className="text-2xl font-semibold text-[#0C1734]">
             Top Categories
           </h1>
@@ -34,9 +34,9 @@ const Categories = async() => {
             View All <ChevronRight size={20} />
           </Button>
         </div>
-            </Container> 
-        </div>
-    );
+      </Container>
+    </div>
+  );
 };
 
 export default Categories;

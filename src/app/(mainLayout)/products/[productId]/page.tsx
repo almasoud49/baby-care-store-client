@@ -4,32 +4,34 @@ import ProductSideInfo from "@/components/ProductDetails/ProductSideInfo";
 import { TProduct } from "@/types/type.global";
 import { Container } from "@mui/material";
 
-
-
 export const generateStaticParams = async () => {
-    const res = await fetch(
-      "http://localhost:5000/api/products"
-    );
-    const products = await res.json();
-  
-    return products.data.slice(0, 10).map((product: TProduct) => ({
-      productId: product._id,
-    }));
-  };
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/products"
+  );
+  const products = await res.json();
 
-const ProductDetailsPage = async({ params }:{ params: { productId: string } }) => {
-    const { productId } = params;
+  return products.data.slice(0, 10).map((product: TProduct) => ({
+    productId: product._id,
+  }));
+};
 
-    const res = await fetch(
-        `http://localhost:5000/api/product/${productId}`,
-        { cache: "no-store" }
-      );
-    
-      const data = await res.json();
-      const product = data?.data;
+const ProductDetailsPage = async ({
+  params,
+}: {
+  params: { productId: string };
+}) => {
+  const { productId } = params;
 
-    return (
-        <div className=" my-12">
+  const res = await fetch(
+    `https://baby-care-store-server-one.vercel.app/api/product/${productId}`,
+    { cache: "no-store" }
+  );
+
+  const data = await res.json();
+  const product = data?.data;
+
+  return (
+    <div className=" my-12">
       <Container>
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5">
           <ProductImageSlide product={product} />
@@ -40,7 +42,7 @@ const ProductDetailsPage = async({ params }:{ params: { productId: string } }) =
         </div>
       </Container>
     </div>
-    );
+  );
 };
 
 export default ProductDetailsPage;

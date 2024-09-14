@@ -26,7 +26,7 @@ const ProductDescription = ({product}:{product:TProduct}) => {
       <Box>
         {value === 0 && <ProductDetails product={product} />}
         {value === 1 && <ProductSpecification />}
-        {value === 2 && <ProductReviews />}
+        {value === 2 && <ProductReviews productId={""} />}
       </Box>
     </Stack>
     );

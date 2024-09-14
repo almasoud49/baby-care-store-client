@@ -6,11 +6,14 @@ import ProductCard from "@/utils/actions/ProductCard";
 import { TProduct } from "@/types/type.global";
 
 const PopularProducts = async () => {
-  const res = await fetch("http://localhost:5000/api/products", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/products",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
 
   const data = await res.json();
   return (

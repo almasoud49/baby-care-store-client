@@ -18,9 +18,12 @@ import EditOffIcon from "@mui/icons-material/EditOff";
 import { TOrder } from "@/types/type.global";
 
 const MyOrderPage = async () => {
-  const res = await fetch("http://localhost:5000/api/orders", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/orders",
+    {
+      cache: "no-store",
+    }
+  );
   const order = await res.json();
 
   return (

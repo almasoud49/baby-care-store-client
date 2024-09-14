@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { TProduct } from "@/types/type.global";
 import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
@@ -16,7 +16,9 @@ const FlashSalePage = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch("http://localhost:5000/api/products");
+      const res = await fetch(
+        "https://baby-care-store-server-one.vercel.app/api/products"
+      );
       const data = await res.json();
       const filtered = data?.data?.filter((item: TProduct) => item.flashSale);
       setFilterData(filtered);
@@ -26,7 +28,7 @@ const FlashSalePage = () => {
   }, []);
 
   useEffect(() => {
-    const endTime = new Date("2024-09-30T23:59:59"); 
+    const endTime = new Date("2024-09-30T23:59:59");
 
     const updateCountdown = () => {
       const now = new Date();
@@ -43,7 +45,9 @@ const FlashSalePage = () => {
       }
 
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
@@ -55,10 +59,10 @@ const FlashSalePage = () => {
       });
     };
 
-    updateCountdown(); 
-    const intervalId = setInterval(updateCountdown, 1000); 
+    updateCountdown();
+    const intervalId = setInterval(updateCountdown, 1000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -94,7 +98,7 @@ const FlashSalePage = () => {
         </div>
         <p className="text-lg font-semibold text-red-500">Hurry up!</p>
       </div>
-      <SearchBar/>
+      <SearchBar />
       <div className="grid mt-4 grid-cols-2 lg:grid-cols-4 gap-5 mx-auto">
         {filterData.map((product: TProduct) => (
           <ProductCard product={product} key={product._id} />
@@ -105,4 +109,3 @@ const FlashSalePage = () => {
 };
 
 export default FlashSalePage;
-

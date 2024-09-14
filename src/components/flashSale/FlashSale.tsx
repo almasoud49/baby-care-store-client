@@ -6,17 +6,21 @@ import Link from "next/link";
 import ProductCard from "@/utils/actions/ProductCard";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/products", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/products",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
 
   const flashSaleData = await res.json();
-  
+
   const filterFlashSaleData = flashSaleData?.data?.filter(
-    (item: TProduct) => item.flashSale);
-  
+    (item: TProduct) => item.flashSale
+  );
+
   return (
     <Container>
       <Stack
@@ -27,7 +31,7 @@ const FlashSale = async () => {
         marginTop="60px"
         marginBottom="40px"
       >
-                <Typography
+        <Typography
           sx={{ fontSize: "22px", fontWeight: "bold", color: "#0C1734" }}
         >
           Flash Sale
@@ -38,11 +42,9 @@ const FlashSale = async () => {
       </Stack>
 
       <div className=" grid grid-cols-2 lg:grid-cols-4 gap-5 mx-auto">
-        {
-            filterFlashSaleData.slice(0, 4).map((product: TProduct)=>(
-                <ProductCard key={product._id} product={product}/>
-            ))
-        }
+        {filterFlashSaleData.slice(0, 4).map((product: TProduct) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
       </div>
     </Container>
   );

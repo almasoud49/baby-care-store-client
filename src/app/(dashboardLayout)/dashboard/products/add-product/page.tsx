@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   Box,
@@ -61,15 +61,18 @@ const AddProductPage = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/product", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://baby-care-store-server-one.vercel.app/api/product",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await response.json();
       if (result.success) {
         toast.success("Product created successfully!");
-       
+
         setProductData({
           title: "",
           price: "",
@@ -86,7 +89,6 @@ const AddProductPage = () => {
         toast.error(result.message || "Failed to create product. Try again.");
       }
     } catch (error: any) {
-      
       toast.error(`Error submitting the form: ${error.message}`);
     }
   };

@@ -1,28 +1,29 @@
 import {
-    Box,
-    Stack,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-  } from "@mui/material";
-  import Paper from "@mui/material/Paper";
-  import Image from "next/image";
-  import EditNoteIcon from "@mui/icons-material/EditNote";
-  import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-  import Link from "next/link";
+  Box,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import Paper from "@mui/material/Paper";
+import Image from "next/image";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import Link from "next/link";
 import { TProduct } from "@/types/type.global";
 
+const AllProductsPage = async () => {
+  const res = await fetch(
+    "https://baby-care-store-server-one.vercel.app/api/products",
+    { cache: "no-store" }
+  );
+  const data = await res.json();
 
-const AllProductsPage =async () => {
-
-    const res = await fetch("http://localhost:5000/api/products", {cache:'no-store'})
-    const data = await res.json();
-
-    return (
-<div>
+  return (
+    <div>
       <h1 className="text-2xl font-semibold">All Products</h1>
       <div className="my-5">
         <TableContainer component={Paper}>
@@ -65,7 +66,7 @@ const AllProductsPage =async () => {
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
-                        gap: "5px"
+                        gap: "5px",
                       }}
                     >
                       <Box
@@ -88,7 +89,7 @@ const AllProductsPage =async () => {
         </TableContainer>
       </div>
     </div>
-    );
+  );
 };
 
 export default AllProductsPage;
