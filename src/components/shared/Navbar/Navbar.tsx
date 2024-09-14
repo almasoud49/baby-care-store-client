@@ -70,11 +70,12 @@ const Navbar = () => {
                 <Typography component={Link} href="/products">
                   Products
                 </Typography>
-                <Typography component={Link} href="/about-us">
-                  About Us
-                </Typography>
+
                 <Typography component={Link} href="/contact-us">
                   Contact Us
+                </Typography>
+                <Typography component={Link} href="/blog">
+                  Blog
                 </Typography>
                 {token && (
                   <Typography
@@ -168,14 +169,7 @@ const Navbar = () => {
                     <ShoppingBasket size={20} className="mr-1" />
                     <Typography>Products</Typography>
                   </Box>
-                  <Box
-                    component={Link}
-                    href="/about-us"
-                    onClick={() => toggleDrawer(false)}
-                  >
-                    <User size={20} className="mr-1" />
-                    <Typography>About Us</Typography>
-                  </Box>
+
                   <Box
                     component={Link}
                     href="/contact-us"
@@ -183,6 +177,14 @@ const Navbar = () => {
                   >
                     <Headset size={20} className="mr-1" />
                     <Typography>Contact Us</Typography>
+                  </Box>
+                  <Box
+                    component={Link}
+                    href="/blog"
+                    onClick={() => toggleDrawer(false)}
+                  >
+                    <User size={20} className="mr-1" />
+                    <Typography>Blog</Typography>
                   </Box>
                   {token && (
                     <Box

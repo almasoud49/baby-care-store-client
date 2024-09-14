@@ -58,40 +58,37 @@ const Blog = () => {
 <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
+          <Typography>How does Next.js differ from a traditional React application?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          Next.js is a React framework that improves typical React apps by incorporating server-side rendering (SSR) and static site generation (SSG) out of the box. While a standard React app uses client-side rendering (CSR), which generates the complete UI in the browser, Next.js enables pages to be pre-rendered on the server, which improves performance, SEO, and load times. Furthermore, Next.js provides file-based routing, which automatically constructs routes based on the file structure, making navigation setup easier than React's custom routing with React Router. It also has support for API routes, allowing for backend functionality within the same framework. These changes make Next.js better suited to developing performant, production-ready online applications with improved SEO and scalability.
+
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Collapsible Group Item #2</Typography>
+          <Typography>What are the advantages of using Next.js for server-side rendering?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          Next.js has various advantages for server-side rendering (SSR), hence it's a popular choice for current web apps. First, SSR increases performance by sending fully rendered HTML pages directly from the server, which leads to shorter initial load times and a better user experience, particularly on slower networks or devices. It also improves SEO by allowing search engines to quickly index fully rendered content. Furthermore, Next.js simplifies SSR by offering a built-in framework with minimal configuration, allowing developers to easily handle both static and dynamic content. Next.js improves scalability and developer productivity by providing features like as automatic code splitting, optimized image processing, and built-in API routes. Overall, it provides a strong combination of performance, SEO advantages, and developer-friendly features.
+
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
+          <Typography>What is prefetching in Next.js?
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          Prefetching in Next.js is a speed enhancement tool that loads resources for linked pages in the background before the user navigates to them. By default, the Next.js component enables prefetching for pages on the same site. When a user interacts with a website, Next.js gets the content of connected sites, storing the relevant data and components.
+
+This procedure allows for practically quick browsing between sites because the next page is already loaded in the background when the user hits the link. Prefetching enhances the user experience by lowering wait times, particularly on large sites, and allowing for faster page transitions. It operates automatically during idle time, making it an effective solution to improve app responsiveness without requiring manual intervention.
+
           </Typography>
         </AccordionDetails>
       </Accordion>
