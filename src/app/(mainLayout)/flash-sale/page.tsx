@@ -3,6 +3,7 @@ import { TProduct } from "@/types/type.global";
 import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import ProductCard from "@/utils/actions/ProductCard";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
 const FlashSalePage = () => {
   const [filterData, setFilterData] = useState<TProduct[]>([]);
@@ -93,7 +94,8 @@ const FlashSalePage = () => {
         </div>
         <p className="text-lg font-semibold text-red-500">Hurry up!</p>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mx-auto">
+      <SearchBar/>
+      <div className="grid mt-4 grid-cols-2 lg:grid-cols-4 gap-5 mx-auto">
         {filterData.map((product: TProduct) => (
           <ProductCard product={product} key={product._id} />
         ))}

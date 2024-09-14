@@ -1,5 +1,5 @@
 import React from "react";
-import NotFoundImg from "../assets/baby-logo.png";
+import NotFoundImg from "@/assets/not-found.jpg";
 import Image from "next/image";
 import Link from "next/link";
 

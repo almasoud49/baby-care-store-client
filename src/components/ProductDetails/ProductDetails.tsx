@@ -19,7 +19,7 @@ const ProductDetails = ({ product }: { product: TProduct }) => {
           We care for your child always
         </h1>
         <p className="text-md lg:text-lg font-medium">
-          Nutrition for you and your little one at every age
+          Betterment for you and your little one at every age
         </p>
       </div>
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 my-12">

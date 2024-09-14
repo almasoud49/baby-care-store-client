@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import LoaderImg from "../assets/baby-logo.png";
+import LoaderImg from "@/assets/loading.jpg";
 
 const loadingPage = () => {
   return (

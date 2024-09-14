@@ -4,27 +4,18 @@ const ProductSpecification = () => {
     return (
 <div className="mt-8">
       <div>
-        <h1 className="text-lg font-medium">Ingredients:</h1>
-        <p className="text-lg font-light text-gray-700">
-          Skimmed milk powder, lactose, vegetable oils (palm, rapeseed,
-          sunflower), palm kernel fat, calcium carbonate, calcium salts of
-          phosphoric acid, vitamin C, ferrous sulphate, stabilizer: L (+) -
-          lactic acid, vitamin D, riboflavin , vitamin A, potassium iodate.
+        <h1 className="text-lg font-medium">Specifications:</h1>
+        <p className="text-lg font-light mb-3 text-gray-700">
+        This baby care collection includes essential items designed for babies’ delicate needs across various categories such as skincare, diapers, haircare, wipes, bedding, feeding, and grooming.
         </p>
-      </div>
-      <div className="my-3">
-        <h1 className="text-lg font-medium">Nutritional values:</h1>
-        <p className="text-lg font-medium text-gray-700">
-          Callories: <span className=" font-light">110 kcal</span>
+        <p className="text-lg mb-3 font-light text-gray-700">
+        Popular skincare products like lotions, creams, and powders from brands like SoftCare, NatureCare, and EarthBaby use gentle and natural ingredients to moisturize and protect babies' sensitive skin. Diapers from DiaperX offer ultra-absorbency and comfort, while WipeAway provides hypoallergenic wipes for sensitive skin.
         </p>
-        <p className="text-lg font-medium text-gray-700">
-          Total Fat: <span className=" font-light"> 0g / 0%</span>
+        <p className="text-lg mb-3 font-light text-gray-700">
+        For haircare, the collection features mild, tear-free shampoos from PureBaby, ensuring safe and effective cleaning for baby’s hair and scalp. Teething and feeding products such as those from CleanEats and TinyTeeth cater to the developmental stages, providing safe materials and ergonomic designs.
         </p>
-        <p className="text-lg font-medium text-gray-700">
-          Total Carbohydrate: <span className=" font-light">26g / 9%</span>
-        </p>
-        <p className="text-lg font-medium text-gray-700">
-          Protein: <span className=" font-light">3g / 10%</span>
+        <p className="text-lg mb-3 font-light text-gray-700">
+        Bedding, soothing, and grooming items like cozy wraps, calming creams, and baby-friendly nail clippers round out the assortment, ensuring comfort and care for babies from newborns to toddlers.
         </p>
       </div>
       <div>

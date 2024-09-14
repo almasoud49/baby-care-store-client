@@ -1,10 +1,10 @@
 "use client";
 import React from 'react';
 
-import Cream from  "../../assets/images/cream.jpg"
-import Power from  "../../assets/images/powder.jpg"
-import Shampoo from  "../../assets/images/shampoo.jpg"
-import Bottle from  "../../assets/images/feeding-bottle.jpg"
+import Cream from  "../../assets/images/baby-collection.jpg"
+import Power from  "../../assets/images/baby-element.jpg"
+import Shampoo from  "../../assets/images/colourful-collection.jpg"
+import Bottle from  "../../assets/images/pink-toys.jpg"
 
 import Image from "next/image";
 import { TProduct } from '@/types/type.global';

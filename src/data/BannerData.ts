@@ -1,11 +1,11 @@
-import SlideImgOne from "../assets/banner/oil.jpg";
-import SlideImgTwo from "../assets/banner/pacifier.jpg";
-import SlideImgThree from "../assets/banner/play-mat.jpg";
+import SlideImgOne from "@/assets/banner/antiques.jpg";
+import SlideImgTwo from "@/assets/banner/bright-clothes.jpg";
+import SlideImgThree from "@/assets/banner/little-baby-accessories.jpg";
 
 const bannerData = [
   {
     id: "1",
-    title: "Best Diapers to Play",
+    title: "Antiques Assortment",
     currPrice: "19.99",
     prevPrice: "29.99",
     image: SlideImgOne,
@@ -13,7 +13,7 @@ const bannerData = [
   },
   {
     id: "2",
-    title: "All Premium Milk Powders",
+    title: "Bright Cloths",
     currPrice: "29.99",
     prevPrice: "39.99",
     image: SlideImgTwo,
@@ -21,7 +21,7 @@ const bannerData = [
   },
   {
     id: "3",
-    title: "Robo Model M20 Prem Wunderkind",
+    title: "Little Baby Accessories",
     currPrice: "155.99",
     prevPrice: "199.99",
     image: SlideImgThree,
