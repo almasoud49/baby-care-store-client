@@ -1,3 +1,3 @@
-### Admin Email Address & Password
-admin@email.com
-password
+### Admin Credential
+Email: admin@email.com
+Password: password
