@@ -16,10 +16,8 @@ import logo from "../../../assets/baby-logo.png";
 import {
   AlignJustify,
   Headset,
-  Heart,
   Home,
   LayoutDashboard,
-  LogIn,
   ShoppingBasket,
   ShoppingCart,
   User,
@@ -31,7 +29,7 @@ import {
   useCurrentToken,
 } from "@/redux/features/auth/authSlice";
 import { useCurrentCartData } from "@/redux/features/cart/cartSlice";
-import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+// import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -45,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#0C1734] text-white">
+    <div className="fixed z-50 top-0 left-0 w-full shadow-2xl text-black">
       <Container>
         <Stack
           display="flex"
@@ -54,14 +52,11 @@ const Navbar = () => {
           justifyContent="space-between"
           padding="15px 5px"
         >
-          <Box component={Link} href="/" display="flex" alignItems="center">
-            <Image src={logo} width={30} height={30} alt="Website Logo" />
-            <Typography variant="h6" component="h2" marginLeft="3px">
-              Baby Care
-            </Typography>
-          </Box>
-          <Stack>
-            {/* Desktop View */}
+          <Stack direction="row" alignItems="center" gap={4}>
+            <Box component={Link} href="/" display="flex" alignItems="center">
+              <Image src={logo} width={30} height={30} alt="Website Logo" />
+            </Box>
+            {/* Desktop View - Left side menu */}
             <div className="hidden lg:block">
               <div className="flex gap-4">
                 <Typography component={Link} href="/">
@@ -87,55 +82,85 @@ const Navbar = () => {
                     Dashboard
                   </Typography>
                 )}
-                <Divider
-                  orientation="vertical"
-                  variant="fullWidth"
-                  flexItem
-                  sx={{ borderColor: "#fff", opacity: 0.5 }}
-                />
-                <Stack
-                  display="flex"
-                  flexDirection="row"
-                  alignItems="center"
-                  gap={2}
-                >
-                  {token ? (
-                    <Button
-                      onClick={() => dispatch(logoutUser())}
-                      sx={{
-                        width: "80px",
-                        padding: "4px 0",
-                        marginLeft: "5px",
-                        backgroundColor: "#EF4444",
-                        "&:hover": {
-                          backgroundColor: "#EF4444",
-                        },
-                      }}
-                    >
-                      Logout
-                    </Button>
-                  ) : (
-                    <Box component={Link} href="/login">
-                      <LogIn className="cursor-pointer" size={25} />
-                    </Box>
-                  )}
-
-                  <Badge
-                    badgeContent={cartData?.length}
-                    color="primary"
-                    sx={{ userSelect: "none" }}
-                    showZero
-                  >
-                    <Box component={Link} href="/cart">
-                      <ShoppingCart className="cursor-pointer" size={25} />
-                    </Box>
-                  </Badge>
-                  {/* Theme Toggle Icon */}
-                  <ThemeToggle />
-                </Stack>
               </div>
             </div>
-            {/* Mobile View */}
+          </Stack>
+
+          {/* Right Side - Cart, Theme Toggle, Login/Logout */}
+          <Stack direction="row" alignItems="center" gap={2}>
+            {token ? (
+              <Button
+                onClick={() => dispatch(logoutUser())}
+                variant="outlined"
+                sx={{
+                  padding: "5px 15px",
+                  borderRadius: "9999px",
+                  color: "#0D7C66",
+                  borderColor: "#0D7C66",
+                  backgroundColor: "transparent",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    borderColor: "#0A6C59",
+                    color: "#0A6C59",
+                  },
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <>
+                <Button
+                  component={Link}
+                  href="/login"
+                  variant="outlined"
+                  sx={{
+                    padding: "5px 15px",
+                    borderRadius: "9999px",
+                    color: "#3B82F6",
+                    borderColor: "#3B82F6",
+                    backgroundColor: "transparent",
+                    "&:hover": {
+                      backgroundColor: "transparent",
+                      borderColor: "#2563EB",
+                      color: "#2563EB",
+                    },
+                  }}
+                >
+                  Login
+                </Button>
+                <Button
+                  component={Link}
+                  href="/register"
+                  variant="contained" 
+                  sx={{
+                    padding: "5px 15px",
+                    borderRadius: "9999px", 
+                    backgroundColor: "#3B82F6",
+                    "&:hover": {
+                      backgroundColor: "#2563EB", 
+                    },
+                  }}
+                >
+                  Signup
+                </Button>
+              </>
+            )}
+
+            <Badge
+              badgeContent={cartData?.length}
+              color="primary"
+              sx={{ userSelect: "none" }}
+              showZero
+            >
+              <Box component={Link} href="/cart">
+                <ShoppingCart className="cursor-pointer" size={25} />
+              </Box>
+            </Badge>
+
+            {/* Theme Toggle Icon */}
+            {/* <ThemeToggle /> */}
+
+            {/* Mobile View - Toggle Drawer */}
             <div className="block lg:hidden">
               <AlignJustify
                 onClick={() => toggleDrawer(true)}
@@ -221,31 +246,43 @@ const Navbar = () => {
                         dispatch(logoutUser());
                         toggleDrawer(false);
                       }}
+                      variant="outlined"
                       sx={{
-                        width: "80px",
-                        padding: "4px 0",
-                        marginLeft: "5px",
-                        backgroundColor: "#EF4444",
+                        padding: "5px 15px",
+                        borderRadius: "9999px",
+                        color: "#0D7C66",
+                        borderColor: "#0D7C66",
+                        backgroundColor: "transparent",
                         "&:hover": {
-                          backgroundColor: "#EF4444",
+                          backgroundColor: "transparent",
+                          borderColor: "#0A6C59",
+                          color: "#0A6C59",
                         },
                       }}
                     >
                       Logout
                     </Button>
                   ) : (
-                    <Box component={Link} href="/login">
-                      <LogIn className="cursor-pointer" size={25} />
-                    </Box>
+                    <Button
+                      component={Link}
+                      href="/login"
+                      variant="outlined"
+                      sx={{
+                        padding: "5px 15px",
+                        borderRadius: "9999px",
+                        color: "#3B82F6",
+                        borderColor: "#3B82F6",
+                        backgroundColor: "transparent",
+                        "&:hover": {
+                          backgroundColor: "transparent",
+                          borderColor: "#2563EB",
+                          color: "#2563EB",
+                        },
+                      }}
+                    >
+                      Login
+                    </Button>
                   )}
-                  <Badge
-                    badgeContent={0}
-                    color="info"
-                    sx={{ userSelect: "none" }}
-                    showZero
-                  >
-                    <Heart className="cursor-pointer" size={25} />
-                  </Badge>
                   <Badge
                     badgeContent={cartData?.length}
                     color="info"
@@ -256,29 +293,13 @@ const Navbar = () => {
                       <ShoppingCart className="cursor-pointer" size={25} />
                     </Box>
                   </Badge>
-                  {/* Theme Toggle Icon */}
-                  <ThemeToggle />
+                  {/* <ThemeToggle /> */}
                 </Stack>
               </Drawer>
             </div>
           </Stack>
         </Stack>
       </Container>
-      {open && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(2px)",
-            zIndex: 999,
-          }}
-          onClick={() => toggleDrawer(false)}
-        />
-      )}
     </div>
   );
 };

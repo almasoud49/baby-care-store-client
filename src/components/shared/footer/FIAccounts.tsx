@@ -10,12 +10,16 @@ const FIAccounts = () => {
       >
         Account Info
       </Typography>
-      <Box display="flex" flexDirection="column" gap={1} fontSize="16px" fontWeight="400" >
-        <Link href="/">My Account</Link>
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap={1}
+        fontSize="16px"
+        fontWeight="400"
+      >
         <Link href="/">My Orders</Link>
         <Link href="/">Returns</Link>
         <Link href="/">Shipping</Link>
-        <Link href="/">Wishlist</Link>
       </Box>
     </Stack>
   );

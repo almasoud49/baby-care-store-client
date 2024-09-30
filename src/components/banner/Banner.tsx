@@ -6,7 +6,7 @@ import BannerSlider from "./BannerSlider";
 const Banner = () => {
   return (
     <Container>
-      <div className="mt-3">
+      <div className="mt-20">
         <BannerSlider />
       </div>
     </Container>

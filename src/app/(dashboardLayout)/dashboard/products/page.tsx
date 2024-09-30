@@ -17,7 +17,7 @@ import { TProduct } from "@/types/type.global";
 
 const AllProductsPage = async () => {
   const res = await fetch(
-    "https://baby-care-store-server-one.vercel.app/api/products",
+    `${process.env.SERVER_URL}/api/products`,
     { cache: "no-store" }
   );
   const data = await res.json();

@@ -14,8 +14,6 @@ const FILinks = () => {
         <Link href="/products">Trending Products</Link>
         <Link href="/categories">Categories/Brands</Link>
         <Link href="/about-us">About Us</Link>
-        <Link href="/contact-us">Contact Us</Link>
-        <Link href="/customer-care">Customer Care</Link>
       </Box>
     </Stack>
   );

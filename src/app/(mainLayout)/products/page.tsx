@@ -10,7 +10,7 @@ import FilterByRating from "@/components/products/productFiltering/FilterByRatin
 
 const ProductsPage = () => {
     return (
-        <div>
+        <div className="mt-24">
             <Container>
               
         <div className="grid grid-cols-1 lg:grid-cols-11 my-8">

@@ -12,11 +12,9 @@ const FIInformationLinks = () => {
       </Typography>
       <Box display="flex" flexDirection="column" gap={1} fontSize="16px" fontWeight="400">
         <Link href="/">Delivery Information</Link>
-        <Link href="/">Sales</Link>
-        <Link href="/">Terms & Conditions</Link>
+         <Link href="/">Terms & Conditions</Link>
         <Link href="/">Returns Policy</Link>
-        <Link href="/">Reedem Codes</Link>
-      </Box>
+        </Box>
     </Stack>
   );
 };

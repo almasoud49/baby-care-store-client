@@ -62,7 +62,7 @@ const AddProductPage = () => {
 
     try {
       const response = await fetch(
-        "https://baby-care-store-server-one.vercel.app/api/product",
+        `${process.env.SERVER_URL}/api/product`,
         {
           method: "POST",
           body: formData,

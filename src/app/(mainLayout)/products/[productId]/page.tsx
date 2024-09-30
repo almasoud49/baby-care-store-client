@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 
 export const generateStaticParams = async () => {
   const res = await fetch(
-    "https://baby-care-store-server-one.vercel.app/api/products"
+    `${process.env.SERVER_URL}/api/products`
   );
   const products = await res.json();
 
@@ -23,7 +23,7 @@ const ProductDetailsPage = async ({
   const { productId } = params;
 
   const res = await fetch(
-    `https://baby-care-store-server-one.vercel.app/api/product/${productId}`,
+    `${process.env.SERVER_URL}/api/product/${productId}`,
     { cache: "no-store" }
   );
 

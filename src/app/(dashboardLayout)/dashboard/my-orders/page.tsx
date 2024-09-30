@@ -19,7 +19,7 @@ import { TOrder } from "@/types/type.global";
 
 const MyOrderPage = async () => {
   const res = await fetch(
-    "https://baby-care-store-server-one.vercel.app/api/orders",
+    `${process.env.SERVER_URL}/api/orders`,
     {
       cache: "no-store",
     }

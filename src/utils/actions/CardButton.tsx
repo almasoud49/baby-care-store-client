@@ -1,21 +1,29 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { Box } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useAppDispatch } from "@/redux/hooks";
 import { addToCart } from "@/redux/features/cart/cartSlice";
 
+const CardButton = ({ product }: any) => {
+  const dispatch = useAppDispatch();
 
-const CardButton = ({ product }:  any) => {
-    const dispatch = useAppDispatch();
   return (
     <div>
-      <Box component="button" onClick={() => dispatch(addToCart(product))}>
-        <AddShoppingCartIcon
-          sx={{ fontSize: 25, marginRight: "5px", color: "#EF4444" }}
-        />
-      </Box>
+      <Button
+        variant="outlined"
+        onClick={() => dispatch(addToCart(product))}
+        sx={{
+          textTransform: "none",
+          borderColor: "#00aaff",
+          color: "#00aaff",
+          "&:hover": {
+            backgroundColor: "#00aaff",
+            color: "#fff",
+          },
+        }}
+      >
+        Add to Cart
+      </Button>
     </div>
   );
 };

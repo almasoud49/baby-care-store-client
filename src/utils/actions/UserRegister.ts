@@ -3,7 +3,7 @@
 
 export const userRegister = async (data: any) => {
   const res = await fetch(
-    "https://baby-care-store-server-one.vercel.app/api/auth/register",
+    `${process.env.SERVER_URL}/api/auth/register`,
     {
       method: "POST",
       headers: {

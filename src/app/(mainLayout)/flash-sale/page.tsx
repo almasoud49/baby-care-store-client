@@ -17,7 +17,7 @@ const FlashSalePage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await fetch(
-        "https://baby-care-store-server-one.vercel.app/api/products"
+        `${process.env.SERVER_URL}/api/products`
       );
       const data = await res.json();
       const filtered = data?.data?.filter((item: TProduct) => item.flashSale);

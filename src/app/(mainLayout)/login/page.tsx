@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Box, Stack, Typography, Button } from "@mui/material";
@@ -39,7 +38,8 @@ const LoginPage = () => {
   };
 
   return (
-    <Stack
+  <div className="mt-20">
+      <Stack
       sx={{
         justifyContent: "center",
         alignItems: "center",
@@ -77,46 +77,7 @@ const LoginPage = () => {
           >
             Please Login to Your Account
           </Typography>
-
         </Box>
-        {/* <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            margin: "20px 0",
-          }}
-        >
-          <Box
-            sx={{
-              backgroundColor: "#1877F7",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaFacebookF color="#fff" size={18} />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "#007EBB",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaLinkedinIn color="#fff" size={18} />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "#000",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaGithub color="#fff" size={18} />
-          </Box>
-        </Stack>
-        <Divider sx={{ marginBottom: "25px" }}>Or</Divider> */}
 
         <Box>
           <FormProvider onSubmit={handleLogin}>
@@ -138,29 +99,33 @@ const LoginPage = () => {
                 size="medium"
               />
             </Box>
-            <Box sx={{ margin: "2px 0", color: "#EF4444", textAlign: "right" }}>
+            <Box sx={{ margin: "2px 0", color: "#000", textAlign: "right" }}>
               Forgot Password?
             </Box>
             <Button
               sx={{
                 margin: "10px 0px",
                 padding: "12px 0",
-                backgroundColor: "#EF4444",
+                backgroundColor: "transparent",
+                border: "1px solid #0077FF",
+                color: "#0077FF",
+                borderRadius: "20px",
                 "&:hover": {
-                  backgroundColor: "#EF4444",
+                  backgroundColor: "#0077FF",
+                  color: "#fff",
                 },
               }}
               fullWidth={true}
               type="submit"
             >
-              Login
+              LOGIN
             </Button>
           </FormProvider>
           <Typography textAlign="center" fontSize="16px">
             Don&apos;t have an account?
             <Box
               component={Link}
-              color="#EF4444"
+              color="#000"
               fontWeight={600}
               href="/register"
             >
@@ -168,47 +133,47 @@ const LoginPage = () => {
             </Box>
             <Divider sx={{ marginBottom: "25px" }}>Or</Divider>
             <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            margin: "20px 0",
-          }}
-        >
-          <Box
-            sx={{
-              backgroundColor: "#1877F7",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaFacebookF color="#fff" size={18} />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "#007EBB",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaLinkedinIn color="#fff" size={18} />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "#000",
-              padding: "12px 40px",
-              borderRadius: "3px",
-            }}
-          >
-            <FaGithub color="#fff" size={18} />
-          </Box>
-        </Stack>
-        
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                margin: "20px 0",
+              }}
+            >
+              <Box
+                sx={{
+                  backgroundColor: "#1877F7",
+                  padding: "12px 40px",
+                  borderRadius: "3px",
+                }}
+              >
+                <FaFacebookF color="#fff" size={18} />
+              </Box>
+              <Box
+                sx={{
+                  backgroundColor: "#007EBB",
+                  padding: "12px 40px",
+                  borderRadius: "3px",
+                }}
+              >
+                <FaLinkedinIn color="#fff" size={18} />
+              </Box>
+              <Box
+                sx={{
+                  backgroundColor: "#000",
+                  padding: "12px 40px",
+                  borderRadius: "3px",
+                }}
+              >
+                <FaGithub color="#fff" size={18} />
+              </Box>
+            </Stack>
           </Typography>
         </Box>
       </Stack>
     </Stack>
+  </div>
   );
 };
 

@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import FISclIcons from "./FISclIcons";
+
 
 
 const FIDetails = () => {
@@ -27,12 +27,6 @@ const FIDetails = () => {
         <MapPin size={20} className="mr-2" />
         <Typography>Mirpur, Dhaka</Typography>
       </Box>
-      <Typography
-        sx={{ fontSize: "18px", fontWeight: "400", marginTop: "15px" }}
-      >
-        Follow us on social media
-      </Typography>
-      <FISclIcons/>
     </Stack>
   );
 };

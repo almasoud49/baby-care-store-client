@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 const Products = async () => {
   const res = await fetch(
-    "https://baby-care-store-server-one.vercel.app/api/products",
+    `${process.env.SERVER_URL}/api/products`,
     { cache: "no-cache" }
   );
   const productsData = await res.json();

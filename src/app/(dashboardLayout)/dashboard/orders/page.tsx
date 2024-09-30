@@ -25,7 +25,7 @@ const OrderPage = () => {
     const fetchOrders = async () => {
       try {
         const res = await fetch(
-          "https://baby-care-store-server-one.vercel.app/api/orders",
+          `${process.env.SERVER_URL}/api/orders`,
           {
             cache: "no-store",
           }
@@ -45,7 +45,7 @@ const OrderPage = () => {
 
     try {
       const response = await fetch(
-        `https://baby-care-store-server-one.vercel.app/api/${orderId}/status`,
+        `${process.env.SERVER_URL}/api/${orderId}/status`,
         {
           method: "PATCH",
           headers: {
