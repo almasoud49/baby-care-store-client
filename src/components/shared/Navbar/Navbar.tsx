@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed z-50 bg-transparent bg-blue-600 top-0 left-0 w-full shadow-2xl text-white">
+    <div className="fixed z-50 bg-transparent  top-0 left-0 w-full shadow-2xl text-black">
       <Container>
         <Stack
           display="flex"
@@ -116,13 +116,13 @@ const Navbar = () => {
                   sx={{
                     padding: "5px 15px",
                     borderRadius: "9999px",
-                    color: "#FFFFFF",
+                    color: "#2563EB",
                     borderColor: "#3B82F6",
                     backgroundColor: "transparent",
                     "&:hover": {
                       backgroundColor: "transparent",
                       borderColor: "#2563EB",
-                      color: "#FFFFFF",
+                      color: "#2563EB",
                     },
                   }}
                 >
