@@ -7,19 +7,20 @@ import { getAllChildFoodData } from "@/data/ChildFoodData";
 
 
 const ChildFood = () => {
-  // Fetch child food data
+  
   const childFoodData = getAllChildFoodData();
 
   return (
-    <Container>
-        <Box sx={{ padding: "20px" }}>
+ <div className="mt-16 mb-10">
+       <Container>
+        <Box >
       <Typography variant="h5" sx={{ marginBottom: "20px" }}>
         Child Food Products
       </Typography>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }, 
+          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }, 
           gap: 2,
         }}
       >
@@ -29,6 +30,7 @@ const ChildFood = () => {
       </Box>
     </Box>
     </Container>
+ </div>
   );
 };
 
