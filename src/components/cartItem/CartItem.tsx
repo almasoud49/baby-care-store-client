@@ -106,15 +106,25 @@ const CartItem = () => {
             variant="outlined"
           />
           <Button
+            // sx={{
+            //   width: "150px",
+            //   padding: "15px 0",
+            //   marginLeft: "5px",
+            //   backgroundColor: "#EF4444",
+            //   "&:hover": {
+            //     backgroundColor: "#EF4444",
+            //   },
+            // }}
             sx={{
               width: "150px",
               padding: "15px 0",
               marginLeft: "5px",
-              backgroundColor: "#EF4444",
+              backgroundColor: "#4285F4",
+              color: "#FFFFFF", 
               "&:hover": {
-                backgroundColor: "#EF4444",
+                  backgroundColor: "#4285F4", 
               },
-            }}
+          }}
             variant="contained"
           >
             Apply Coupon
@@ -123,15 +133,27 @@ const CartItem = () => {
         <Box
           component="button"
           onClick={() => dispatch(removeAllDataFromCart())}
+          // sx={{
+          //   width: "150px",
+          //   padding: "15px 0",
+          //   marginLeft: "5px",
+          //   color: "#fff",
+          //   borderRadius: "5px",
+          //   backgroundColor: "#0C1734",
+          //   "&:hover": {
+          //     backgroundColor: "#0C1734",
+          //   },
+          // }}
           sx={{
             width: "150px",
             padding: "15px 0",
-            marginLeft: "5px",
-            color: "#fff",
-            borderRadius: "5px",
-            backgroundColor: "#0C1734",
+            backgroundColor: "transparent",
+            border: "1px solid #0077FF",
+            color: "#0077FF",
+            // borderRadius: "20px",
             "&:hover": {
-              backgroundColor: "#0C1734",
+              // backgroundColor: "#0077FF",
+              color: "#0077FF",
             },
           }}
         >

@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed z-50 top-0 left-0 w-full shadow-2xl text-black">
+    <div className="fixed z-50 bg-transparent bg-[#4285F4] top-0 left-0 w-full shadow-2xl text-white">
       <Container>
         <Stack
           display="flex"
@@ -69,9 +69,9 @@ const Navbar = () => {
                 <Typography component={Link} href="/contact-us">
                   Contact Us
                 </Typography>
-                <Typography component={Link} href="/blog">
+                {/* <Typography component={Link} href="/blog">
                   Blog
-                </Typography>
+                </Typography> */}
                 {token && (
                   <Typography
                     component={Link}
@@ -116,13 +116,13 @@ const Navbar = () => {
                   sx={{
                     padding: "5px 15px",
                     borderRadius: "9999px",
-                    color: "#3B82F6",
+                    color: "#FFFFFF",
                     borderColor: "#3B82F6",
                     backgroundColor: "transparent",
                     "&:hover": {
                       backgroundColor: "transparent",
                       borderColor: "#2563EB",
-                      color: "#2563EB",
+                      color: "#FFFFFF",
                     },
                   }}
                 >

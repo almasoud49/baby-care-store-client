@@ -40,7 +40,7 @@ const UserDashboardMenu = ({ children }: { children: React.ReactNode }) => {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: "#0C1734",
+          backgroundColor: "#fbfbfe",
         }}
       >
         <Toolbar>
@@ -53,14 +53,14 @@ const UserDashboardMenu = ({ children }: { children: React.ReactNode }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="h1" color="#fff">
+          <Typography variant="h6" noWrap component="h1" color="#050315">
             Hello, Abdullah Al Masoud
           </Typography>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        // sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         <Drawer

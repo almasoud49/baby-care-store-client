@@ -31,7 +31,7 @@ const ProductDetailsPage = async ({
   const product = data?.data;
 
   return (
-    <div className=" my-12">
+    <div className=" my-20">
       <Container>
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5">
           <ProductImageSlide product={product} />

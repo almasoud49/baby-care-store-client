@@ -66,7 +66,19 @@ const ProductSideInfo = ({product}:any) => {
           <Plus color="#363636" size={20} />
         </Box>
         <Box component="button" onClick={() => dispatch(addToCart(product))}>
-          <Button size="large">Add to Cart </Button>
+          <Button
+          sx={{
+            width: "200px",
+            padding: "15px 0",
+            // borderRadius: "9999px",
+            backgroundColor: "#4285F4",
+            color: "#FFFFFF", 
+            "&:hover": {
+                backgroundColor: "#4285F4", 
+            },
+        }}
+          
+          size="large">Add to Cart </Button>
         </Box>
       </Stack>
       <hr className=" my-5 border-gray-100 border-[1px]" />

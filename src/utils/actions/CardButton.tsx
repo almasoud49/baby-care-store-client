@@ -12,12 +12,24 @@ const CardButton = ({ product }: any) => {
       <Button
         variant="outlined"
         onClick={() => dispatch(addToCart(product))}
+        // sx={{
+        //   textTransform: "none",
+        //   borderColor: "#00aaff",
+        //   color: "#00aaff",
+        //   "&:hover": {
+        //     backgroundColor: "#00aaff",
+        //     color: "#fff",
+        //   },
+        // }}
         sx={{
-          textTransform: "none",
-          borderColor: "#00aaff",
-          color: "#00aaff",
+          // margin: "10px 0px",
+          // padding: "12px 0",
+          backgroundColor: "transparent",
+          border: "1px solid #0077FF",
+          color: "#0077FF",
+          // borderRadius: "20px",
           "&:hover": {
-            backgroundColor: "#00aaff",
+            backgroundColor: "#0077FF",
             color: "#fff",
           },
         }}

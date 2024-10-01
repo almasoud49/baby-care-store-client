@@ -86,7 +86,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">Rating (1-5)</label>
+          <label className="block text-gray-700">Rating</label>
           <input
             type="number"
             name="rating"

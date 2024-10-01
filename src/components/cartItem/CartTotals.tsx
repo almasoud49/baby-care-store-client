@@ -87,14 +87,26 @@ const subTotal = cartData.reduce((total, item) => {
         >
           <Button
             fullWidth
+            // sx={{
+            //   padding: "12px 0",
+            //   backgroundColor: "#EF4444",
+            //   "&:hover": {
+            //     backgroundColor: "#EF4444",
+            //   },
+            // }}
+            // variant="contained"
+
             sx={{
               padding: "12px 0",
-              backgroundColor: "#EF4444",
+              borderRadius: "9999px",
+              backgroundColor: "#4285F4",
+              color: "#FFFFFF", 
               "&:hover": {
-                backgroundColor: "#EF4444",
+                  backgroundColor: "#4285F4", 
               },
-            }}
-            variant="contained"
+          }}
+          variant="contained"
+            
           >
             Proceed to Checkout
           </Button>
@@ -107,13 +119,23 @@ const subTotal = cartData.reduce((total, item) => {
         >
           <Button
             fullWidth
+            // sx={{
+            //   padding: "12px 0",
+            //   backgroundColor: "#EF4444",
+            //   "&:hover": {
+            //     backgroundColor: "#EF4444",
+            //   },
+            // }}
             sx={{
+              // width: "200px",
               padding: "12px 0",
-              backgroundColor: "#EF4444",
+              // borderRadius: "9999px",
+              backgroundColor: "#4285F4",
+              color: "#FFFFFF", 
               "&:hover": {
-                backgroundColor: "#EF4444",
+                  backgroundColor: "#4285F4", 
               },
-            }}
+          }}
             variant="contained"
           >
             Proceed to Checkout

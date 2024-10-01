@@ -1,6 +1,6 @@
-import SlideImgOne from "@/assets/banner/antiques.jpg";
-import SlideImgTwo from "@/assets/banner/bright-clothes.jpg";
-import SlideImgThree from "@/assets/banner/little-baby-accessories.jpg";
+import SlideImgOne from "@/assets/banner/antiques1.jpg";
+import SlideImgTwo from "@/assets/banner/bright-clothes1.jpg";
+import SlideImgThree from "@/assets/banner/little-baby-accessories1.jpg";
 
 const bannerData = [
   {

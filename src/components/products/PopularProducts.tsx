@@ -42,14 +42,26 @@ const PopularProducts = async () => {
         href="/products"
         size="large"
         variant="contained" 
+        // sx={{
+        //   backgroundColor: "#12354a", 
+        //   color: "#ffffff", 
+        //   borderRadius: "20px", 
+        //   textTransform: "uppercase", 
+        //   padding: "10px 20px", 
+        //   "&:hover": {
+        //     backgroundColor: "#12354a", 
+        //   },
+        // }}
         sx={{
-          backgroundColor: "#12354a", 
-          color: "#ffffff", 
-          borderRadius: "20px", 
-          textTransform: "uppercase", 
-          padding: "10px 20px", 
+          margin: "10px 0px",
+          padding: "10px 20px",
+          backgroundColor: "transparent",
+          border: "1px solid #0077FF",
+          color: "#0077FF",
+          borderRadius: "20px",
           "&:hover": {
-            backgroundColor: "#12354a", 
+            backgroundColor: "#0077FF",
+            color: "#fff",
           },
         }}
       >

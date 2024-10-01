@@ -226,16 +226,27 @@ const AddProductPage = () => {
         </Box>
         <Stack>
           <Button
+            // sx={{
+            //   width: "200px",
+            //   padding: "15px 0",
+            //   backgroundColor: "#EF4444",
+            //   "&:hover": {
+            //     backgroundColor: "#EF4444",
+            //   },
+            // }}
             sx={{
               width: "200px",
               padding: "15px 0",
-              backgroundColor: "#EF4444",
+              borderRadius: "9999px",
+              backgroundColor: "#4285F4",
+              color: "#FFFFFF", 
               "&:hover": {
-                backgroundColor: "#EF4444",
+                  backgroundColor: "#4285F4", 
               },
-            }}
+          }}
             type="submit"
             variant="contained"
+            
           >
             Add Product
           </Button>

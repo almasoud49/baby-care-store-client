@@ -17,6 +17,7 @@ const CartPage = () => {
 
     return (
 
+<div className='mt-20'>
 <Container>
       <Box marginTop={5}>
         {cartData.length > 0 ? (
@@ -47,15 +48,29 @@ const CartPage = () => {
               </Typography>
             </Box>
             <Box
+              // sx={{
+              //   backgroundColor: "#0C1734",
+              //   padding: "12px 22px",
+              //   color: "#fff",
+              //   cursor: "pointer",
+              //   borderRadius: "5px",
+              //   fontSize: "18px",
+              //   marginTop: "10px"
+              // }}
               sx={{
-                backgroundColor: "#0C1734",
-                padding: "12px 22px",
-                color: "#fff",
-                cursor: "pointer",
-                borderRadius: "5px",
+                width: "200px",
+                padding: "15px ",
                 fontSize: "18px",
-                marginTop: "10px"
-              }}
+                borderRadius: "5px",
+                textAlign:"center",
+                marginTop: "10px",
+                cursor: "pointer",
+                backgroundColor: "#4285F4",
+                color: "#FFFFFF", 
+                "&:hover": {
+                    backgroundColor: "#4285F4", 
+                },
+            }}
               component={Link}
               href="/products"
             >
@@ -65,6 +80,7 @@ const CartPage = () => {
         )}
       </Box>
     </Container>
+</div>
     );
 };
 
